@@ -1,8 +1,14 @@
 package com.template.project.test;
 
 
+import dto.test.TestTableDTO;
+
+import java.util.List;
+
 public interface TestService {
 
 
-    public void testService();
+    public List<TestTableDTO> findTestTables();
+
+    public TestTableDTO findTestTableById(long id);
 }

@@ -8,7 +8,7 @@
     <artifactId>springbootTemplate</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!-- 模块管理 -->
+    <!-- module Management -->
     <modules>
         <module>common</module>
         <module>web</module>
@@ -17,21 +17,14 @@
         <module>dao</module>
     </modules>
 
-    <!--
-        打包方式:
-        1. jar 默认的
-        2. war 使用外部tomcat可以使用war包
-        3. pom 针对root工程/父工程进行使用，并且顶级pom可以管理所有jar依赖的坐标, pom不参与打包
-    -->
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
 
-    <!-- 引入springboot相关的所有依赖 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -41,7 +34,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- mysql 驱动 -->
+            <!-- mysql driver -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -77,7 +70,7 @@
                 <version>2.10.2</version>
             </dependency>
 
-            <!-- apache 工具类 -->
+            <!-- apache utils -->
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
@@ -99,11 +92,23 @@
                 <version>2.11.0</version>
             </dependency>
 
-            <!-- google 工具类 -->
+            <!-- google utils -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>28.2-jre</version>
+            </dependency>
+
+            <!-- mapstructs -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>1.4.1.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>1.4.2.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -111,14 +116,26 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
-            <!-- java编译-->
+            <!-- java compile-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                     <encoding>UTF-8</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.20</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>1.4.1.Final</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
