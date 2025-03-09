@@ -26,4 +26,25 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>${project.parent.name}</finalName> <!-- 设置最终输出的JAR/WAR文件名 -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.1.6</version> <!-- 确保版本与你的Spring Boot版本匹配 -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${project.artifactId}</finalName> <!-- 再次确认输出文件名 -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
