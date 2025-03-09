@@ -12,7 +12,7 @@
     <artifactId>common</artifactId>
 
     <dependencies>
-        <!--引入springboot相关依赖 -->
+        <!--spring dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -48,7 +48,7 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
-        <!-- apache 工具类 -->
+        <!-- apache utils -->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -66,7 +66,7 @@
             <artifactId>commons-io</artifactId>
         </dependency>
 
-        <!-- google 工具类 -->
+        <!-- google utils -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -81,25 +81,10 @@
             <artifactId>mapstruct-processor</artifactId>
         </dependency>
 
-        <!-- lombok 插件 -->
+        <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-
-        <!--引入 mysql驱动 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <!-- mybatis-plus -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
         </dependency>
 
     </dependencies>

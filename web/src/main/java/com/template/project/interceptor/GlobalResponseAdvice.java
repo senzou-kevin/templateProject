@@ -2,14 +2,12 @@ package com.template.project.interceptor;
 
 import enums.error.SystemErrorCode;
 import exception.TemplateException;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import utils.ResultVO;
-
-import javax.servlet.http.HttpServletRequest;
-
 
 @Slf4j
 @RestControllerAdvice

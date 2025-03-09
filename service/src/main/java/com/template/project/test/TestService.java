@@ -8,7 +8,7 @@ import java.util.List;
 public interface TestService {
 
 
-    public List<TestTableDTO> findTestTables();
+    List<TestTableDTO> findTestTables();
 
-    public TestTableDTO findTestTableById(long id);
+    TestTableDTO findTestTableById(long id);
 }
