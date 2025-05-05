@@ -14,8 +14,8 @@ import utils.ResultVO;
 public class GlobalResponseAdvice {
 
 
-    @ExceptionHandler(RuntimeException.class)
-    public <T> ResultVO<T> runtimeExceptionHandler(RuntimeException e, HttpServletRequest request) {
+    @ExceptionHandler(Exception.class)
+    public <T> ResultVO<T> exceptionHandler(Exception e, HttpServletRequest request) {
         log.error("request error:" + request.getRequestURI(), e);
         return ResultVO.fail(SystemErrorCode.SYSTEM_ERROR, e.getMessage());
     }
