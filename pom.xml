@@ -15,6 +15,7 @@
         <module>start</module>
         <module>service</module>
         <module>dao</module>
+        <module>api</module>
     </modules>
 
     <packaging>pom</packaging>
